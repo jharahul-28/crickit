@@ -29,15 +29,43 @@ CricKit is a distributed, multi-microservice platform designed for cricket organ
 
 ## Build and Run
 
-To build the entire project from root:
+This project uses the **Maven Wrapper** (`mvnw` / `mvnw.cmd`), so a pre-installed Maven distribution is **not required**. The wrapper automatically downloads and uses the pinned Maven version (3.9.16).
 
-```bash
-mvn clean compile
-```
+### Build the entire platform
 
-To run an individual service (e.g. `identity-service`):
+From the repository root:
 
-```bash
-cd services/identity-service
-mvn spring-boot:run
-```
+- **Linux / macOS:**
+  ```bash
+  ./mvnw clean compile
+  ```
+- **Windows (PowerShell / Command Prompt):**
+  ```powershell
+  .\mvnw.cmd clean compile
+  ```
+
+### Run an individual microservice
+
+To run an individual service (e.g. `identity-service`) from the root:
+
+- **Linux / macOS:**
+  ```bash
+  ./mvnw -pl services/identity-service spring-boot:run
+  ```
+- **Windows (PowerShell / Command Prompt):**
+  ```powershell
+  .\mvnw.cmd -pl services/identity-service spring-boot:run
+  ```
+
+Alternatively, from within the service directory:
+
+- **Linux / macOS:**
+  ```bash
+  cd services/identity-service
+  ../../mvnw spring-boot:run
+  ```
+- **Windows (PowerShell / Command Prompt):**
+  ```powershell
+  cd services/identity-service
+  ..\..\mvnw.cmd spring-boot:run
+  ```

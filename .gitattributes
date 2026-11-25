@@ -1,0 +1,9 @@
+# Set default behavior to automatically handle line endings
+* text=auto
+
+# Maven Wrapper scripts
+mvnw text eol=lf
+mvnw.cmd text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.sh text eol=lf
